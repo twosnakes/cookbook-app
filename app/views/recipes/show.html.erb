@@ -1,7 +1,18 @@
 <h2><%= @recipe.title %></h2>
+<h5>Last Updated On: <%= @recipe.friendly_updated %></h5>
 <h4><%= @recipe.chef %></h4>
-<h3><%= @recipe.ingredients %></h3>
-<h3><%= @recipe.directions %></h3>
+<h5>Prep Time: <%= @recipe.prep_time %></h5>
+<h3>Ingredients</h3>
+<ul>
+  <%= @recipe.ingredients_list.each do |ingredient| %>
+    <li><%= ingredient %></li>
+  <% end %>
+</ul>
+<h3>Directions</h3>
+<ol>
+ <%= @recipe.directions_list(", ").each do |direction| %>
+ <li><% direction %></li>
+ <% end %>
 
 <a href="/recipes/<%= @recipe.id %>/edit">Edit Recipe</a>
 <%= link_to "Edit Recipe", "/recipes/#{ @recipe.id }/edit" %>
