@@ -1,3 +1,25 @@
+
+<h1>New Recipe</h1>
+
+<%= form_tag "/recipes", method: :post do %>
+<div>
+Title: <input type="text" name= "title">
+ </div>
+<div>
+Chef: <input type="text" name= "title">
+ </div>
+<div>
+Ingredients: <input type="text" name= "title">
+ </div>
+<div>
+Directions: <input type="text" name= "title">
+</div>
+<<input type="submit" value="create image">
+  <% end %>
+
+
+
+
 <div class="row">
 <% @recipes.each do |recipe| %>
 <div class="col-md-4">

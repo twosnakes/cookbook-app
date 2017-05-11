@@ -1,0 +1,14 @@
+<h1>Amazing Recipes</h1>
+ <div class="row">
+    <% @recipes.each do |recipe| %>
+      <div class="col-md-4">
+        <div class="thumbnail well">
+
+        <h1><a href="/recipes/<%= recipe.id %>"> <%= recipe.title %></a></h1>
+        <h4><%= recipe.ingredients %></h4>
+        <h3><%= recipe.directions %></h3>
+        <img src="<%= recipe.image_urla %>">
+      </div>
+    </div>
+  <% end %>
+</div>
