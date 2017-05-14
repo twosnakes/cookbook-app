@@ -7,7 +7,8 @@
         <h1><a href="/recipes/<%= recipe.id %>"> <%= recipe.title %></a></h1>
         <h4><%= recipe.ingredients %></h4>
         <h3><%= recipe.directions %></h3>
-        <img src="<%= recipe.image_urla %>">
+        <h5><%= recipe.friendly_prep_time %></h5>
+        <img src="<%= recipe.image_url %>">
       </div>
     </div>
   <% end %>

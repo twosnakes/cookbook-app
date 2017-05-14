@@ -2,6 +2,10 @@ class RecipesController < ApplicationController
   
    def index
     @recipes = Recipe.all
+    sort_attributes = params[:sort]
+    if sort_attributes
+      @recipes = Recipe.all.order(sort_attributes)
+    end
   end
 
   def show
@@ -18,7 +22,8 @@ class RecipesController < ApplicationController
                         title: params[:title],
                         chef: params[:chef],
                         ingredients: params[:ingredients],
-                        directions: params[:directions]
+                        directions: params[:directions],
+                        prep_time: params[:prep_time]
                         )
     recipe.save
     flash[:success] = "Recipe Successfully Created"
