@@ -1,6 +1,14 @@
 class RecipesController < ApplicationController
   
    def index
+    if session[:count] == nil
+      session[:count] = 0
+    end 
+
+    session[:count] += 1
+    @visit_count = session[:count]
+
+
     @recipes = Recipe.all
     sort_attributes = params[:sort]
     if sort_attributes
